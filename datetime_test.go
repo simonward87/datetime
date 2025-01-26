@@ -1,7 +1,6 @@
 package datetime_test
 
 import (
-	"regexp"
 	"testing"
 	"time"
 
@@ -9,11 +8,6 @@ import (
 )
 
 func TestString(t *testing.T) {
-	re, err := regexp.Compile(`^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(\.\d{1,3})?Z$`)
-	if err != nil {
-		t.Fatal(err)
-	}
-
 	testCases := []struct {
 		expect string
 		layout string
@@ -41,7 +35,8 @@ func TestString(t *testing.T) {
 				t.Fatal(err)
 			}
 
-			if dt := datetime.String(timestamp); !re.Match([]byte(dt)) {
+			dt := datetime.String(timestamp)
+			if !datetime.RegExp.Match([]byte(dt)) {
 				t.Errorf("regexp.Match: got %s, want %s", dt, tc.expect)
 			}
 		})
