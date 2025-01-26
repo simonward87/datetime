@@ -14,9 +14,11 @@ import (
 // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date#date_time_string_format
 const Format = "2006-01-02T15:04:05.999Z"
 
-// RegExp is a pre-initialized regular expression for checking if a
+// Regexp is a pre-initialized regular expression for checking if a
 // string is a valid JavaScript date time string.
-var RegExp = regexp.MustCompile(`^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(\.\d{1,3})?Z$`)
+var Regexp = regexp.MustCompile(
+	`^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(\.\d{1,3})?Z$`,
+)
 
 // Parse parses a JavaScript date time string and returns the time value
 // it represents.

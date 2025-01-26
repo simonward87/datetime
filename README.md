@@ -40,7 +40,7 @@ func run(dateTime string) error {
 
     // do something with str
 
-    if !datetime.RegExp.Match([]byte(str)) {
+    if !datetime.Regexp.MatchString(str) {
         return errors.New("invalid date time string")
     }
     return nil

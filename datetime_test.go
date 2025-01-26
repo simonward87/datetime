@@ -36,7 +36,7 @@ func TestString(t *testing.T) {
 			}
 
 			dt := datetime.String(timestamp)
-			if !datetime.RegExp.Match([]byte(dt)) {
+			if !datetime.Regexp.MatchString(dt) {
 				t.Errorf("regexp.Match: got %s, want %s", dt, tc.expect)
 			}
 		})
