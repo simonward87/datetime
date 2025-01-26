@@ -1,3 +1,6 @@
+// package datetime contains convenience functions for working with
+// JavaScript date time strings
+
 package datetime
 
 import (
